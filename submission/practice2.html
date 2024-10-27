@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<title>Practice 2</title>
+	<style>
+
+		h1 {
+			font-family: georgia;
+			font-size: 30;
+			border-bottom: 3px solid SlateBlue;
+		}
+		
+		#text {
+			border: 2px solid black;
+			padding: 10px;
+			background-color: white
+		}
+		body{
+			background-image: url('background.jpg');
+		}
+		.center {
+			margin: auto;
+			width: 20%;
+			background-color: gray;
+			height: 500px;
+			width: 350px;
+			border: 2px solid black;
+			padding: 5px;
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+
+	<div class="center">
+	<h1>Practice 2</h1>	
+	<div>
+	<p id="text">The quick brown fox jumps over a lazy dog.</p>
+	</div>
+	
+	<form id="params">
+		<!-- ask for inputs of new formatting -->
+		<label for="borderR"> Border R (0-255):</label>
+		<input type="number" id="borderR" name="borderR" value="0" min="0" max="255"><br>
+		
+		<label for="borderG"> Border G (0-255):</label>
+		<input type="number" id="borderG" name="borderG" value="0" min="0" max="255"><br>
+		
+		<label for="borderB"> Border B (0-255):</label>
+		<input type="number" id="borderB" name="borderB" value="0" min="0" max="255"><br>
+		
+		<label for="borderW"> Border Width:</label>
+		<input type="number" id="borderW" name="borderW" value="2" min="0"><br>
+		
+		<label for="textR"> Text R (0-255):</label>
+		<input type="number" id="textR" name="textR" value="0" min="0" max="255"><br>
+		
+		<label for="textG"> Text G (0-255):</label>
+		<input type="number" id="textG" name="textG" value="0" min="0" max="255"><br>
+		
+		<label for="textB"> Text B (0-255):</label>
+		<input type="number" id="textB" name="textB" value="0" min="0" max="255"><br>
+		
+		<label for="backgroundR"> Background R (0-255):</label>
+		<input type="number" id="backgroundR" name="backgroundR" value="255" min="0" max="255"><br>
+		
+		<label for="backgroundG"> Background G (0-255):</label>
+		<input type="number" id="backgroundG" name="backgroundG" value="255" min="0" max="255"><br>
+		
+		<label for="backgroundB"> Background B (0-255):</label>
+		<input type="number" id="backgroundB" name="backgroundB" value="255" min="0" max="255"><br>
+		
+		<!-- submit the params to process if all are valid -->
+		<input type="submit" value="Apply">
+		
+	</form>
+	</div>
+
+	<script>
+		document.getElementById('params').addEventListener('submit', function(event) 
+		{
+			event.preventDefault();
+			
+			// convert the inputs into rgb values by adding them together
+			var borCol = document.getElementById('borderR').value + "," +
+						 document.getElementById('borderG').value + "," +
+						 document.getElementById('borderB').value;
+			var texCol = document.getElementById('textR').value + "," +
+						 document.getElementById('textG').value + "," +
+						 document.getElementById('textB').value;
+			var bacCol = document.getElementById('backgroundR').value + "," +
+						 document.getElementById('backgroundG').value + "," +
+						 document.getElementById('backgroundB').value;
+			var borWid = document.getElementById('borderW').value;
+			var text = document.getElementById('text');
+			
+			// set new colors and width to update paragraph
+			text.style.color = `rgb(${texCol})`;
+			text.style.borderWidth = `${borWid}px`;
+			text.style.borderColor = `rgb(${borCol})`;
+			text.style.backgroundColor = `rgb(${bacCol})`;
+		});
+	</script>
+</body>
+
+</html>

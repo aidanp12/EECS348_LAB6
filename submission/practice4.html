@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<title>Practice 4</title>
+	<style>
+		body {
+			background-image: url('background.jpg');
+		}
+		
+		table {
+			background-color: white;
+		}
+		
+		.center {
+			margin: auto;
+			width: 20%;
+			background-color: gray;
+			height: 125px;
+			width: 350px;
+			border: 2px solid black;
+			padding: 5px;
+		}
+		.table {
+			margin: auto;
+			width: 15%;
+			padding: 20px;
+		}
+		h1 {
+			font-size: 30;
+			font-family: georgia;
+			border-bottom: 3px solid SlateBlue;
+		}
+		
+		
+	</style>
+</head>
+
+<body>
+	<div class="center">
+	<h1>Practice 4</h1>
+	
+
+	<!-- ask for input and save to a variable -->
+	<label for="tableSize"> Enter a size for your table:</label>
+	<input type="number" id="tableSize" name="tableSize" min="1">
+	
+	<button onclick="makeTable()">Generate!</button>
+	<br><br>
+	
+
+	
+	<!-- link table code from other file -->
+	<script src="table.js"></script>	
+	</div>
+	
+	<div class="table">
+	<!-- initialize a table to add values to -->
+	<table id="timesTable" border="1"></table>	
+	</div>
+	
+</body>
+
+</html>

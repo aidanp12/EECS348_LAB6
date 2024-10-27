@@ -1,0 +1,40 @@
+<html>
+
+<head>
+	<title>Practice 3</title>
+	<style>
+		body{
+			background-image: url('background.jpg');
+		}
+		.center {
+			margin: auto;
+			width: 20%;
+			background-color: gray;
+			height: 200px;
+			width: 350px;
+			border: 2px solid black;
+			padding: 5px;
+		}
+		h1 {
+			font-size: 30;
+			font-family: georgia;
+			border-bottom: 3px solid SlateBlue;
+		}
+	</style>
+</head>
+
+<body>	
+	<div class="center">	
+	<h1>Practice 3</h1>	
+	
+	<label for="pass1"> First Password:</label>
+	<input type="text" id="pass1" name="pass1"><br>
+	<label for="pass2"> Second Password:</label>
+	<input type="text" id="pass2" name="pass2"><br>
+	<button onclick="validatePassword()">Validate Your Password</button>
+	</div>
+	
+	<script src="password_check.js">
+	</script>
+</body>
+</html>
